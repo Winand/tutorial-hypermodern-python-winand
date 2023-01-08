@@ -27,3 +27,14 @@ pytest-cov = "^4.0.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["tutorial_hypermodern_python_winand"]
+
+[tool.coverage.report]
+show_missing = true
