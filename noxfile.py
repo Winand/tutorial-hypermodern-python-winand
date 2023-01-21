@@ -39,7 +39,10 @@ def lint(session: nox.Session):
 @nox.session(python=["3.9", "3.8"])
 def tests(session: nox.Session):
     args = session.posargs or ["--cov", "-m", "not e2e"]
-    session.run("poetry", "install", external=True)
+    session.run("poetry", "install", "--without=dev", external=True)
+    install_with_constraints(
+        session, "coverage[toml]", "pytest", "pytest-cov", "pytest-mock"
+    )
     session.run("pytest", *args)
 
 
