@@ -15,23 +15,30 @@ def install_with_constraints(session, *args, **kwargs):
     requirements = tempfile.NamedTemporaryFile(delete=False)
     try:
         session.run(
-            "poetry", "export",
-            "--with=dev", "--format=constraints.txt", "--without-hashes",
+            "poetry",
+            "export",
+            "--with=dev",
+            "--format=constraints.txt",
+            "--without-hashes",
             f"--output={requirements.name}",
             external=True,
         )
         session.install(f"--constraint={requirements.name}", *args, **kwargs)
     finally:
-            requirements.close()
-            os.unlink(requirements.name)
+        requirements.close()
+        os.unlink(requirements.name)
 
 
 @nox.session(python=["3.9", "3.8"])
 def lint(session: nox.Session):
     args = session.posargs or locations
-    install_with_constraints(session,
-        "flake8", "flake8-bandit", "flake8-black", "flake8-bugbear",
-        "flake8-import-order"
+    install_with_constraints(
+        session,
+        "flake8",
+        "flake8-bandit",
+        "flake8-black",
+        "flake8-bugbear",
+        "flake8-import-order",
     )
     session.run("flake8", *args)
 
@@ -59,8 +66,11 @@ def safety(session):
     requirements = tempfile.NamedTemporaryFile(delete=False)
     try:
         session.run(
-            "poetry", "export",
-            "--with=dev", "--format=requirements.txt", "--without-hashes",
+            "poetry",
+            "export",
+            "--with=dev",
+            "--format=requirements.txt",
+            "--without-hashes",
             f"--output={requirements.name}",
             external=True,
         )
