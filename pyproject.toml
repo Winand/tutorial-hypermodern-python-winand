@@ -47,3 +47,8 @@ source = ["tutorial_hypermodern_python_winand"]
 
 [tool.coverage.report]
 show_missing = true
+
+
+[[tool.mypy.overrides]]
+module = ["nox", "pytest"]
+ignore_missing_imports = true
