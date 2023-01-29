@@ -86,3 +86,11 @@ def mypy(session):
     args = session.posargs or locations
     install_with_constraints(session, "mypy", "click")
     session.run("mypy", "--install-types", "--non-interactive", *args)
+
+
+@nox.session(python=["3.9", "3.8"])
+def pyright(session):
+    """Run the static type checker."""
+    args = session.posargs or locations
+    install_with_constraints(session, "pyright")
+    session.run("pyright", *args)
