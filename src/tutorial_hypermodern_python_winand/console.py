@@ -19,8 +19,5 @@ def main(language: str) -> None:
     """The hypermodern Python project."""
     data = wikipedia.random_page(language=language)
 
-    title = data["title"]
-    extract = data["extract"]
-
-    click.secho(title, fg="green")
-    click.echo(textwrap.fill(extract))
+    click.secho(data.title, fg="green")
+    click.echo(textwrap.fill(data.extract))
