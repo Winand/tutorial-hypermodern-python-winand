@@ -21,11 +21,12 @@ def random_page(language: str = "en") -> Page:
     url = API_URL.format(language=language)
 
     try:
+        # Context manager needed? https://github.com/psf/requests/issues/4136
         with requests.get(url) as response:
             response.raise_for_status()
             data = response.json()
             page = schema.load(data)
-            if not page or isinstance(page, list):
+            if not page or isinstance(page, list):  # pylance
                 raise marshmallow.ValidationError("")
             return page
     except (requests.RequestException, marshmallow.ValidationError) as error:
