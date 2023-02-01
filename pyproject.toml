@@ -55,7 +55,7 @@ show_missing = true
 
 
 [[tool.mypy.overrides]]
-module = ["nox", "pytest", "desert", "marshmallow"]
+module = ["nox", "pytest", "pytest_mock", "desert", "marshmallow"]
 ignore_missing_imports = true
 
 [tool.pyright]
