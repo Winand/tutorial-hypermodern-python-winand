@@ -5,5 +5,7 @@ max-line-length = 80
 max-complexity = 10
 application-import-names = tutorial_hypermodern_python_winand,tests
 import-order-style = google
-per-file-ignores =
-    tests/*:S101,ANN
+per-file-ignores = tests/*:S101
+# https://github.com/sco1/flake8-annotations#--allow-star-arg-any
+# see noxfile.install_with_constraints definition
+allow-star-arg-any = true

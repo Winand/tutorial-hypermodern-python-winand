@@ -43,9 +43,7 @@ def lint(session: nox.Session) -> None:
         "flake8-bugbear",
         "flake8-import-order",
     )
-    # https://github.com/sco1/flake8-annotations#--allow-star-arg-any
-    # see install_with_constraints definition
-    session.run("flake8", *args, "--allow-star-arg-any")
+    session.run("flake8", *args)
 
 
 @nox.session(python=["3.9", "3.8"])
