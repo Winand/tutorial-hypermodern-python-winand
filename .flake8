@@ -1,5 +1,5 @@
 [flake8]
-select = ANN,B,B9,BLK,C,E,F,I,S,W
+select = ANN,B,B9,BLK,C,D,E,F,I,S,W
 ignore = E203,E501,W503
 max-line-length = 80
 max-complexity = 10
@@ -9,3 +9,4 @@ per-file-ignores = tests/*:S101
 # https://github.com/sco1/flake8-annotations#--allow-star-arg-any
 # see noxfile.install_with_constraints definition
 allow-star-arg-any = true
+docstring-convention = google
