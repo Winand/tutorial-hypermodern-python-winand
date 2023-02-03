@@ -22,6 +22,24 @@ def mock_requests_get(mocker: MockerFixture) -> Mock:
     return mock
 
 
+def pytest_addoption(parser: pytest.Parser) -> None:
+    """Console option to run tests with `e2e` mark.
+
+    See also https://stackoverflow.com/a/33181491
+    """
+    parser.addoption(
+        "--with-e2e",
+        action="store_true",
+        dest="with_e2e",
+        default=False,
+        help="Enable end-to-end tests",
+    )
+
+
 def pytest_configure(config: pytest.Config) -> None:
     """Pytest configuration hook."""
     config.addinivalue_line("markers", "e2e: mark as end-to-end test.")
+    if not config.option.with_e2e:
+        if config.option.markexpr:
+            config.option.markexpr += " and "
+        config.option.markexpr += "not e2e"
