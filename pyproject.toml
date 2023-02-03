@@ -38,6 +38,7 @@ pyright = "^1.1.291"
 typeguard = "^2.13.3"
 flake8-annotations = "^3.0.0"
 flake8-docstrings = "^1.7.0"
+darglint = "^1.8.1"
 
 [build-system]
 requires = ["poetry-core"]

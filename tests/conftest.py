@@ -26,6 +26,9 @@ def pytest_addoption(parser: pytest.Parser) -> None:
     """Console option to run tests with `e2e` mark.
 
     See also https://stackoverflow.com/a/33181491
+
+    Args:
+        parser: Parser for command line arguments and ini-file values.
     """
     parser.addoption(
         "--with-e2e",

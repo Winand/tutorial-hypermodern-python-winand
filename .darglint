@@ -1,0 +1,3 @@
+# https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues/518
+[darglint]
+strictness = short

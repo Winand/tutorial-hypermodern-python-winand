@@ -51,8 +51,8 @@ def random_page(language: str = "en") -> Page:
             data = response.json()
             page = schema.load(data)
             if not page or isinstance(page, list):  # pylance
-                raise marshmallow.ValidationError("")
+                raise click.ClickException("pyright validation")
             return page
-    except (requests.RequestException, marshmallow.ValidationError) as error:
+    except requests.RequestException as error:
         message = str(error)
         raise click.ClickException(message) from error
