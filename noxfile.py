@@ -128,4 +128,4 @@ def xdoctest(session: nox.Session) -> None:
 def docs(session: nox.Session) -> None:
     """Build the documentation."""
     install_with_constraints(session, "sphinx")
-    session.run("sphinx-build", "docs", "docs/_build")
+    session.run("sphinx-build", "-W", "--keep-going", "docs", "docs/_build")
