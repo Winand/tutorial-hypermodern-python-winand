@@ -7,7 +7,7 @@ from typing import Any
 import nox
 
 nox.options.sessions = "lint", "safety", "mypy", "tests"
-locations = "src", "tests", "noxfile.py"
+locations = "src", "tests", "noxfile.py", "docs/conf.py"
 package = "tutorial_hypermodern_python_winand"
 
 
@@ -122,3 +122,10 @@ def xdoctest(session: nox.Session) -> None:
     session.run("poetry", "install", "--only=main", external=True)
     install_with_constraints(session, "xdoctest")
     session.run("xdoctest", package, *args)
+
+
+@nox.session(python="3.9")
+def docs(session: nox.Session) -> None:
+    """Build the documentation."""
+    install_with_constraints(session, "sphinx")
+    session.run("sphinx-build", "docs", "docs/_build")
