@@ -42,7 +42,7 @@ def pytest_addoption(parser: pytest.Parser) -> None:
 def pytest_configure(config: pytest.Config) -> None:
     """Pytest configuration hook."""
     config.addinivalue_line("markers", "e2e: mark as end-to-end test.")
-    if not config.option.with_e2e:
-        if config.option.markexpr:
-            config.option.markexpr += " and "
-        config.option.markexpr += "not e2e"
+    if not config.option.markexpr and not config.option.with_e2e:
+        config.option.markexpr = "not e2e"
+    elif config.option.markexpr and config.option.with_e2e:
+        raise ValueError("--with-e2e is not supported with -m")
