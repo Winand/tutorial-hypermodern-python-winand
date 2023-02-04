@@ -53,6 +53,6 @@ def random_page(language: str = "en") -> Page:
             if not page or isinstance(page, list):  # pylance
                 raise click.ClickException("pyright validation")
             return page
-    except requests.RequestException as error:
+    except (requests.RequestException, marshmallow.ValidationError) as error:
         message = str(error)
         raise click.ClickException(message) from error
