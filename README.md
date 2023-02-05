@@ -1,4 +1,6 @@
 # tutorial-hypermodern-python-winand
+[![Tests](https://github.com/Winand/tutorial-hypermodern-python-winand/workflows/Tests/badge.svg)](https://github.com/Winand/tutorial-hypermodern-python-winand/actions?workflow=Tests)
+
 Hypermodern Python tutorial series
 
 ## Links
