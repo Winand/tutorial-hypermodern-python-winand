@@ -1,5 +1,6 @@
 # tutorial-hypermodern-python-winand
 [![Tests](https://github.com/Winand/tutorial-hypermodern-python-winand/workflows/Tests/badge.svg)](https://github.com/Winand/tutorial-hypermodern-python-winand/actions?workflow=Tests)
+[![Codecov](https://codecov.io/gh/Winand/tutorial-hypermodern-python-winand/branch/master/graph/badge.svg)](https://codecov.io/gh/Winand/tutorial-hypermodern-python-winand)
 
 Hypermodern Python tutorial series
 
