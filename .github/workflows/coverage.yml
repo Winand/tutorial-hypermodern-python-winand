@@ -17,6 +17,5 @@ jobs:
     - run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
           chmod +x codecov
-    - name: List files
-      run: ls
+          echo "${{ github.workspace }}" >> $GITHUB_PATH
     - run: nox -s tests coverage -p 3.9
