@@ -130,3 +130,18 @@ def docs(session: nox.Session) -> None:
     session.run("poetry", "install", "--only=main", external=True)
     install_with_constraints(session, "sphinx", "sphinx-autodoc-typehints")
     session.run("sphinx-build", "-W", "--keep-going", "docs", "docs/_build")
+
+
+@nox.session(python="3.9")
+def coverage(session: nox.Session) -> None:
+    """Upload coverage data.
+
+    codecov tool is supposed to be available.
+    https://docs.codecov.com/docs/codecov-uploader
+
+    Args:
+        session: Nox Session instanse
+    """
+    install_with_constraints(session, "coverage[toml]")
+    session.run("coverage", "xml", "--fail-under=0")
+    session.run("codecov", *session.posargs)
