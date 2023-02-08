@@ -5,3 +5,4 @@ poetry.toml
 .vscode
 .coverage
 docs/_build
+dist
