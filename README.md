@@ -5,6 +5,12 @@
 
 Hypermodern Python tutorial series
 
+## Used tools
+- [pyenv-win](https://github.com/pyenv-win/pyenv-win)
+- [Poetry](https://github.com/python-poetry/poetry)
+- [Nox](https://github.com/wntrblm/nox)
+- [pytest](https://github.com/pytest-dev/pytest)
+
 ## Links
 * https://cjolowicz.github.io/posts/hypermodern-python-01-setup
 * https://github.com/cjolowicz/hypermodern-python
