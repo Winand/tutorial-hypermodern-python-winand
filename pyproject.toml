@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tutorial-hypermodern-python-winand"
-version = "0.1.0"
+version = "0.1.1"
 description = "The hypermodern Python project"
 license = "MIT"
 authors = ["Makarov Andrey <winandfx@gmail.com>"]
