@@ -7,6 +7,7 @@ authors = ["Makarov Andrey <winandfx@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/Winand/tutorial-hypermodern-python-winand"
 repository = "https://github.com/Winand/tutorial-hypermodern-python-winand"
+documentation = "https://tutorial-hypermodern-python-winand.readthedocs.io"
 keywords = ["hypermodern"]
 packages = [{include = "tutorial_hypermodern_python_winand", from = "src"}]
 
