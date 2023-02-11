@@ -1,0 +1,3 @@
+# Read the Docs requirements
+sphinx==6.1.3
+sphinx-autodoc-typehints==1.22
