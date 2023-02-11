@@ -1,11 +1,17 @@
 version: 2
 build:
+  # https://docs.readthedocs.io/en/stable/config-file/v2.html#build-os
+  # build.os is required https://github.com/readthedocs/readthedocs.org/issues/8912
+  os: ubuntu-22.04
   tools:
+    # https://docs.readthedocs.io/en/stable/config-file/v2.html#build-tools-python
     python: "3.9"
 sphinx:
   configuration: docs/conf.py
 formats: all
 python:
+  # https://docs.readthedocs.io/en/stable/config-file/v2.html#python-version
+  # version: 3.7
   install:
     - requirements: docs/requirements.txt
     - path: .
