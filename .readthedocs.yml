@@ -1,9 +1,10 @@
 version: 2
+tools:
+  python: "3.9"
 sphinx:
   configuration: docs/conf.py
 formats: all
 python:
-  version: 3.9
   install:
     - requirements: docs/requirements.txt
     - path: .
