@@ -1,6 +1,7 @@
 version: 2
-tools:
-  python: "3.9"
+build:
+  tools:
+    python: "3.9"
 sphinx:
   configuration: docs/conf.py
 formats: all
